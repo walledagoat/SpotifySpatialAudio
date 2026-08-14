@@ -1,0 +1,81 @@
+name: SpotifySpatialAudio
+
+options:
+  bundleIdPrefix: com.walentinrieder
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+configs:
+  Debug: debug
+  Release: release
+
+configFiles:
+  Debug: Config/Spotify.xcconfig
+  Release: Config/Spotify.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: true
+    CODE_SIGN_STYLE: Automatic
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  SpotifySpatialAudio:
+    type: application
+    platform: macOS
+    sources:
+      - path: SpotifySpatialAudio
+        excludes:
+          - Resources/Info.plist
+          - Resources/SpotifySpatialAudio.entitlements
+    info:
+      path: SpotifySpatialAudio/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Spotify Spatial Audio
+        CFBundleShortVersionString: 0.1.0
+        CFBundleVersion: "1"
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        LSUIElement: true
+        NSAppleEventsUsageDescription: Spotify Spatial Audio minimizes only the Safari window containing Spotify Web Player after playback is transferred.
+        SpotifyClientID: "$(SPOTIFY_CLIENT_ID)"
+    entitlements:
+      path: SpotifySpatialAudio/Resources/SpotifySpatialAudio.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.automation.apple-events: true
+        com.apple.security.network.client: true
+        com.apple.security.network.server: true
+        com.apple.security.temporary-exception.apple-events:
+          - com.apple.Safari
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.walentinrieder.SpotifySpatialAudio
+        PRODUCT_NAME: Spotify Spatial Audio
+        INFOPLIST_KEY_SpotifyClientID: "$(SPOTIFY_CLIENT_ID)"
+        ENABLE_APP_SANDBOX: true
+        ENABLE_HARDENED_RUNTIME: true
+        CODE_SIGN_ENTITLEMENTS: SpotifySpatialAudio/Resources/SpotifySpatialAudio.entitlements
+
+  SpotifySpatialAudioTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: SpotifySpatialAudioTests
+    dependencies:
+      - target: SpotifySpatialAudio
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.walentinrieder.SpotifySpatialAudioTests
+        GENERATE_INFOPLIST_FILE: true
+
+schemes:
+  SpotifySpatialAudio:
+    build:
+      targets:
+        SpotifySpatialAudio: all
+        SpotifySpatialAudioTests: [test]
+    test:
+      targets:
+        - SpotifySpatialAudioTests
