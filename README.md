@@ -7,6 +7,7 @@ This repository is a clean-room Swift 6 implementation inspired by the mechanism
 ## Current milestone
 
 - Native SwiftUI `MenuBarExtra` app for macOS 14 and newer.
+- Polished native dashboard with live connection/transfer states, guided setup, and quick menu-bar controls.
 - Spotify Authorization Code with PKCE (S256), CSRF state validation, and no client secret.
 - Fixed `127.0.0.1:8888` loopback callback port for Spotify dashboard compatibility.
 - Access and refresh tokens stored as a generic-password item in macOS Keychain.
@@ -43,6 +44,12 @@ Automatic local-playback monitoring is intentionally not part of this foundation
 
 The client ID is a public application identifier. Never add a Spotify client secret to this native app.
 
+Fork maintainers can optionally enable the **Buy me a coffee** button by adding their public profile username to the same local configuration:
+
+```xcconfig
+BUY_ME_A_COFFEE_USERNAME = your_username
+```
+
 The requested scopes are limited to:
 
 - `user-read-playback-state`
@@ -76,6 +83,7 @@ No Accessibility permission or global keyboard event is required.
 ## Architecture
 
 - `AppState`: main-actor UI state.
+- `MainWindowView`: native dashboard, onboarding, status, project, and support actions.
 - `SpotifyAuthManager`: PKCE authorization, token exchange, persistence, and refresh.
 - `LoopbackCallbackServer`: isolated loopback HTTP callback listener.
 - `SpotifyAPIClient`: typed actor-based Spotify Web API access.
