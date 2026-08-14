@@ -1,2 +1,5 @@
-// Copy this file to Spotify.local.xcconfig and replace the placeholder.
+// Copy this file to Spotify.local.xcconfig and replace the Spotify placeholder.
 SPOTIFY_CLIENT_ID = your_client_id
+
+// Optional: enables the support button in the app window.
+BUY_ME_A_COFFEE_USERNAME = your_username

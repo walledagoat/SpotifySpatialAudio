@@ -38,6 +38,7 @@ targets:
         CFBundleVersion: "1"
         LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
         LSUIElement: true
+        BuyMeACoffeeUsername: "$(BUY_ME_A_COFFEE_USERNAME)"
         NSAppleEventsUsageDescription: Spotify Spatial Audio minimizes only the Safari window containing Spotify Web Player after playback is transferred.
         SpotifyClientID: "$(SPOTIFY_CLIENT_ID)"
     entitlements:
@@ -53,6 +54,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.walentinrieder.SpotifySpatialAudio
         PRODUCT_NAME: Spotify Spatial Audio
+        PRODUCT_MODULE_NAME: SpotifySpatialAudio
         INFOPLIST_KEY_SpotifyClientID: "$(SPOTIFY_CLIENT_ID)"
         ENABLE_APP_SANDBOX: true
         ENABLE_HARDENED_RUNTIME: true
@@ -69,6 +71,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.walentinrieder.SpotifySpatialAudioTests
         GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Spotify Spatial Audio.app/Contents/MacOS/Spotify Spatial Audio"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 
 schemes:
   SpotifySpatialAudio:

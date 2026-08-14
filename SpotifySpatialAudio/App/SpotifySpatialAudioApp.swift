@@ -39,49 +39,63 @@ struct SpotifySpatialAudioApp: App {
   }
 
   var body: some Scene {
+    Window("Spotify Spatial Audio", id: "main") {
+      MainWindowView(appState: appState)
+    }
+    .defaultSize(width: 760, height: 560)
+    .windowResizability(.contentSize)
+
     MenuBarExtra("Spotify Spatial Audio", systemImage: "airpodspro") {
-      Text("Spotify Spatial Audio")
-        .font(.headline)
-
-      Divider()
-
-      Label(appState.statusText, systemImage: appState.statusSymbol)
-
-      if appState.isAuthenticated {
-        Label(
-          appState.spatialAudioStatusText,
-          systemImage: appState.spatialAudioStatusSymbol
-        )
-
-        if appState.canStopSpatialAudio {
-          Button("Stop Spatial Audio") {
-            Task { await appState.stopSpatialAudio() }
-          }
-        } else {
-          Button("Start Spatial Audio") {
-            Task { await appState.startSpatialAudio() }
-          }
-          .disabled(!appState.canStartSpatialAudio)
-        }
-
-        Button("Open Spotify Web Player") {
-          Task { await appState.openSpotifyWebPlayer() }
-        }
-      }
-
-      Button(appState.isAuthenticated ? "Reconnect Spotify" : "Connect Spotify") {
-        Task { await appState.authenticate() }
-      }
-      .disabled(!appState.canAuthenticate)
-
-      Divider()
-
-      Button("Quit") {
-        NSApplication.shared.terminate(nil)
-      }
-      .keyboardShortcut("q")
+      MenuBarContentView(appState: appState)
     }
     .menuBarExtraStyle(.menu)
     .commandsRemoved()
+  }
+}
+
+private struct MenuBarContentView: View {
+  @ObservedObject var appState: AppState
+  @Environment(\.openWindow) private var openWindow
+
+  var body: some View {
+    Button("Open Spotify Spatial Audio") {
+      NSApplication.shared.activate(ignoringOtherApps: true)
+      openWindow(id: "main")
+    }
+    .keyboardShortcut("o")
+
+    Divider()
+
+    Label(appState.statusText, systemImage: appState.statusSymbol)
+
+    if appState.isAuthenticated {
+      Label(
+        appState.spatialAudioStatusText,
+        systemImage: appState.spatialAudioStatusSymbol
+      )
+
+      if appState.canStopSpatialAudio {
+        Button("Stop Spatial Audio") {
+          Task { await appState.stopSpatialAudio() }
+        }
+      } else {
+        Button("Start Spatial Audio") {
+          Task { await appState.startSpatialAudio() }
+        }
+        .disabled(!appState.canStartSpatialAudio)
+      }
+    } else {
+      Button("Connect Spotify") {
+        Task { await appState.authenticate() }
+      }
+      .disabled(!appState.canAuthenticate)
+    }
+
+    Divider()
+
+    Button("Quit") {
+      NSApplication.shared.terminate(nil)
+    }
+    .keyboardShortcut("q")
   }
 }
