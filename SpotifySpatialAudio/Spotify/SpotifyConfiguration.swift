@@ -1,6 +1,8 @@
 import Foundation
 
 struct SpotifyConfiguration: Sendable, Equatable {
+  static let storedClientIDKey = "SpotifyClientID"
+
   static let defaultScopes = [
     "user-read-playback-state",
     "user-modify-playback-state",
@@ -19,8 +21,16 @@ struct SpotifyConfiguration: Sendable, Equatable {
     self.scopes = scopes
   }
 
-  static func from(bundle: Bundle = .main) throws -> SpotifyConfiguration {
-    let clientID = bundle.object(forInfoDictionaryKey: "SpotifyClientID") as? String ?? ""
+  static func from(
+    bundle: Bundle = .main,
+    userDefaults: UserDefaults = .standard
+  ) throws -> SpotifyConfiguration {
+    let storedClientID = userDefaults.string(forKey: storedClientIDKey) ?? ""
+    let bundledClientID = bundle.object(forInfoDictionaryKey: "SpotifyClientID") as? String ?? ""
+    let clientID =
+      storedClientID.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+      ? bundledClientID
+      : storedClientID
     return try SpotifyConfiguration(clientID: clientID)
   }
 }
@@ -31,7 +41,7 @@ enum SpotifyConfigurationError: LocalizedError, Equatable {
   var errorDescription: String? {
     switch self {
     case .missingClientID:
-      "Add your Spotify client ID to Config/Spotify.xcconfig."
+      "Open Setup Guide and add your Spotify client ID."
     }
   }
 }

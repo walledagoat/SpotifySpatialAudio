@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027F7908F76943DB39C2DABE /* spotify-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6662E887DA4A0CBE15BABD /* spotify-dashboard.png */; };
 		16571A7FC835B7CB815400A5 /* SpatialAudioCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA84D732DA4F358A6113B8 /* SpatialAudioCoordinator.swift */; };
+		18F7C450CDB8B9B03527A2C3 /* SpotifySpatialAudioAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022166E796E92E4E9D1EBD35 /* SpotifySpatialAudioAppDelegate.swift */; };
 		1949F52A249D60B73F13171F /* AppLinksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A1AA0CFC235B0F175684F /* AppLinksTests.swift */; };
 		2ACC1885CA29371415EB0BB7 /* PKCE.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB35EC4DE78FF3FAA4B00A86 /* PKCE.swift */; };
 		392CDF95469E9EAE8EF259A2 /* SafariDeviceSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A83F659CC3EEE528480C1E6 /* SafariDeviceSelectorTests.swift */; };
@@ -21,11 +23,16 @@
 		6EDEE6496B16601FB4CECABA /* SpotifyAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E34CA3BFB294ED3B502C6 /* SpotifyAuthManager.swift */; };
 		74BCECF968FA7A86470371E9 /* PKCETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D054B9E15F318757DA4288FD /* PKCETests.swift */; };
 		7FE3FD55182E29965E18EC52 /* SpotifySpatialAudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EC211719B276B96431FFD /* SpotifySpatialAudioApp.swift */; };
+		81E069561208DD83ED1DCE49 /* SetupGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E652AF5D4A58FAD3034E663 /* SetupGuideView.swift */; };
+		89ABDC75AF9E8F9BFF7FA8D5 /* redirect-uri-and-web-api.png in Resources */ = {isa = PBXBuildFile; fileRef = E5AD90270CAA06971DB45343 /* redirect-uri-and-web-api.png */; };
 		8A5FBF7131B788FC1FF0A911 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B543DC52851254EB64D9A061 /* MainWindowView.swift */; };
 		9C4D163DC2ACDF1A56E2164E /* HTTPDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF97410F8C3388CBE9E5AB3 /* HTTPDataLoader.swift */; };
 		A4D71C8908F4D3822960397E /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676BD6F034A07C619FD3636 /* AppLinks.swift */; };
+		A53543F646ABD35AF9E42624 /* create-app-details.png in Resources */ = {isa = PBXBuildFile; fileRef = F67ECD1CB46C8F06E301E08D /* create-app-details.png */; };
 		C4DEFBD49A2AAD671E2124AD /* SpotifyResponseDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BA3AA8681E972C25046FE /* SpotifyResponseDecodingTests.swift */; };
+		D53BEDA0F19A83DE657715FF /* SpotifyConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E04EAE8D9B83ABCF2B2B382 /* SpotifyConfigurationTests.swift */; };
 		DA4017BE9708FAB072FD546A /* SafariController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A08B8BB5CA87DEAB0893 /* SafariController.swift */; };
+		DED6C53F7A1DA62EFE78D640 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66956C4B94E4770B96701207 /* AppController.swift */; };
 		E884C44FA98CDD36D61693C4 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AFA073B5DCC44CD38E18E7 /* TokenStore.swift */; };
 		EB06644D53319AE52E948D30 /* SafariDeviceDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D1926DC7831A92D8C971BD /* SafariDeviceDiscovery.swift */; };
 		ED2482CC21318826B68715CB /* KeychainTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C15DB0B7657F94A1406317 /* KeychainTokenStore.swift */; };
@@ -42,16 +49,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022166E796E92E4E9D1EBD35 /* SpotifySpatialAudioAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySpatialAudioAppDelegate.swift; sourceTree = "<group>"; };
 		04AFA073B5DCC44CD38E18E7 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		0E652AF5D4A58FAD3034E663 /* SetupGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGuideView.swift; sourceTree = "<group>"; };
 		0FF97410F8C3388CBE9E5AB3 /* HTTPDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataLoader.swift; sourceTree = "<group>"; };
 		2676BD6F034A07C619FD3636 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
+		2F6662E887DA4A0CBE15BABD /* spotify-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotify-dashboard.png"; sourceTree = "<group>"; };
 		39F0E72A9AB7BAEBA1730B06 /* SpotifyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyModels.swift; sourceTree = "<group>"; };
 		5C3A1AA0CFC235B0F175684F /* AppLinksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinksTests.swift; sourceTree = "<group>"; };
 		639E34CA3BFB294ED3B502C6 /* SpotifyAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthManager.swift; sourceTree = "<group>"; };
+		66956C4B94E4770B96701207 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		69AF1A8CE2215A15F466F3EE /* Spotify.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Spotify.xcconfig; sourceTree = "<group>"; };
 		6A8EC211719B276B96431FFD /* SpotifySpatialAudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySpatialAudioApp.swift; sourceTree = "<group>"; };
 		6AF2A08B8BB5CA87DEAB0893 /* SafariController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariController.swift; sourceTree = "<group>"; };
 		6D5DCC5D040F12C81CE9B93F /* FormURLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormURLEncoder.swift; sourceTree = "<group>"; };
+		6E04EAE8D9B83ABCF2B2B382 /* SpotifyConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyConfigurationTests.swift; sourceTree = "<group>"; };
 		883E5F3D9DB8DE208B67EB3C /* LoopbackCallbackServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopbackCallbackServer.swift; sourceTree = "<group>"; };
 		8A83F659CC3EEE528480C1E6 /* SafariDeviceSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariDeviceSelectorTests.swift; sourceTree = "<group>"; };
 		95FA84D732DA4F358A6113B8 /* SpatialAudioCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialAudioCoordinator.swift; sourceTree = "<group>"; };
@@ -64,9 +76,11 @@
 		D054B9E15F318757DA4288FD /* PKCETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCETests.swift; sourceTree = "<group>"; };
 		DB35EC4DE78FF3FAA4B00A86 /* PKCE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCE.swift; sourceTree = "<group>"; };
 		DE658F47AC633886FB254B79 /* SpotifyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyConfiguration.swift; sourceTree = "<group>"; };
+		E5AD90270CAA06971DB45343 /* redirect-uri-and-web-api.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redirect-uri-and-web-api.png"; sourceTree = "<group>"; };
 		EBD997F1277DA00EDAEAD19F /* SpotifySpatialAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifySpatialAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE903908121B24AEABD41C6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F2D1926DC7831A92D8C971BD /* SafariDeviceDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariDeviceDiscovery.swift; sourceTree = "<group>"; };
+		F67ECD1CB46C8F06E301E08D /* create-app-details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-app-details.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -89,11 +103,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4BBDED13BB4AC91ED641663F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2E1698A7F97998AED237D67 /* SetupGuide */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5CA980CA3CB63B903CDBE91C /* SpotifySpatialAudio */ = {
 			isa = PBXGroup;
 			children = (
 				7A1A4F2EAD2B5E978F646DA0 /* App */,
 				7057218AE6A934809A7A878A /* Core */,
+				4BBDED13BB4AC91ED641663F /* Resources */,
 				C349EDDC5654BA6D617EFD26 /* Safari */,
 				C0841A332BFC5070BEAAA773 /* Security */,
 				A51736299D287A98F981F531 /* Spotify */,
@@ -113,10 +136,13 @@
 		7A1A4F2EAD2B5E978F646DA0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				66956C4B94E4770B96701207 /* AppController.swift */,
 				2676BD6F034A07C619FD3636 /* AppLinks.swift */,
 				EBE903908121B24AEABD41C6 /* AppState.swift */,
 				B543DC52851254EB64D9A061 /* MainWindowView.swift */,
+				0E652AF5D4A58FAD3034E663 /* SetupGuideView.swift */,
 				6A8EC211719B276B96431FFD /* SpotifySpatialAudioApp.swift */,
+				022166E796E92E4E9D1EBD35 /* SpotifySpatialAudioAppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -127,6 +153,7 @@
 				5C3A1AA0CFC235B0F175684F /* AppLinksTests.swift */,
 				D054B9E15F318757DA4288FD /* PKCETests.swift */,
 				8A83F659CC3EEE528480C1E6 /* SafariDeviceSelectorTests.swift */,
+				6E04EAE8D9B83ABCF2B2B382 /* SpotifyConfigurationTests.swift */,
 				AC1BA3AA8681E972C25046FE /* SpotifyResponseDecodingTests.swift */,
 				BAEB9653E0C12B9114DD1FE0 /* TokenStoreTests.swift */,
 			);
@@ -162,6 +189,16 @@
 				69AF1A8CE2215A15F466F3EE /* Spotify.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		C2E1698A7F97998AED237D67 /* SetupGuide */ = {
+			isa = PBXGroup;
+			children = (
+				F67ECD1CB46C8F06E301E08D /* create-app-details.png */,
+				E5AD90270CAA06971DB45343 /* redirect-uri-and-web-api.png */,
+				2F6662E887DA4A0CBE15BABD /* spotify-dashboard.png */,
+			);
+			path = SetupGuide;
 			sourceTree = "<group>";
 		};
 		C349EDDC5654BA6D617EFD26 /* Safari */ = {
@@ -207,6 +244,7 @@
 			buildConfigurationList = B05119351066583F49625668 /* Build configuration list for PBXNativeTarget "SpotifySpatialAudio" */;
 			buildPhases = (
 				C82B8C26F525AFF0DC15BB00 /* Sources */,
+				8C75EF76DB6DB9FA453467B6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +294,19 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		8C75EF76DB6DB9FA453467B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53543F646ABD35AF9E42624 /* create-app-details.png in Resources */,
+				89ABDC75AF9E8F9BFF7FA8D5 /* redirect-uri-and-web-api.png in Resources */,
+				027F7908F76943DB39C2DABE /* spotify-dashboard.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30665DF21E3A9D469C90C4DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,6 +315,7 @@
 				1949F52A249D60B73F13171F /* AppLinksTests.swift in Sources */,
 				74BCECF968FA7A86470371E9 /* PKCETests.swift in Sources */,
 				392CDF95469E9EAE8EF259A2 /* SafariDeviceSelectorTests.swift in Sources */,
+				D53BEDA0F19A83DE657715FF /* SpotifyConfigurationTests.swift in Sources */,
 				C4DEFBD49A2AAD671E2124AD /* SpotifyResponseDecodingTests.swift in Sources */,
 				665A95A36D5946627F5627A0 /* TokenStoreTests.swift in Sources */,
 			);
@@ -273,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED6C53F7A1DA62EFE78D640 /* AppController.swift in Sources */,
 				A4D71C8908F4D3822960397E /* AppLinks.swift in Sources */,
 				63BF2B97844BAF66183E7B65 /* AppState.swift in Sources */,
 				5C76D032B9D8F108A8BBC895 /* FormURLEncoder.swift in Sources */,
@@ -283,12 +336,14 @@
 				2ACC1885CA29371415EB0BB7 /* PKCE.swift in Sources */,
 				DA4017BE9708FAB072FD546A /* SafariController.swift in Sources */,
 				EB06644D53319AE52E948D30 /* SafariDeviceDiscovery.swift in Sources */,
+				81E069561208DD83ED1DCE49 /* SetupGuideView.swift in Sources */,
 				16571A7FC835B7CB815400A5 /* SpatialAudioCoordinator.swift in Sources */,
 				6A55DA6C18F1B539277A8A7C /* SpotifyAPIClient.swift in Sources */,
 				6EDEE6496B16601FB4CECABA /* SpotifyAuthManager.swift in Sources */,
 				3EE086BF0387DE0AF05D8D73 /* SpotifyConfiguration.swift in Sources */,
 				6C77AF1BCF45C641F38CB36B /* SpotifyModels.swift in Sources */,
 				7FE3FD55182E29965E18EC52 /* SpotifySpatialAudioApp.swift in Sources */,
+				18F7C450CDB8B9B03527A2C3 /* SpotifySpatialAudioAppDelegate.swift in Sources */,
 				E884C44FA98CDD36D61693C4 /* TokenStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

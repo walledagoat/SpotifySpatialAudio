@@ -7,7 +7,7 @@ This repository is a clean-room Swift 6 implementation inspired by the mechanism
 ## Current milestone
 
 - Native SwiftUI `MenuBarExtra` app for macOS 14 and newer.
-- Polished native dashboard with live connection/transfer states, guided setup, and quick menu-bar controls.
+- Native Liquid Glass dashboard on macOS 26, with material fallbacks for macOS 14–15, live connection/transfer states, guided setup, and quick menu-bar controls.
 - Spotify Authorization Code with PKCE (S256), CSRF state validation, and no client secret.
 - Fixed `127.0.0.1:8888` loopback callback port for Spotify dashboard compatibility.
 - Access and refresh tokens stored as a generic-password item in macOS Keychain.
@@ -23,8 +23,17 @@ Automatic local-playback monitoring is intentionally not part of this foundation
 
 ## Spotify setup
 
-1. Create an application in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
-2. Add this redirect URI to the app allowlist:
+The app opens a visual setup guide the first time it runs. You can reopen it later with the **?** button in the window toolbar or **Setup Guide…** in the menu-bar menu.
+
+1. Open the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and choose **Create app**.
+
+   ![Spotify Developer Dashboard with the Create app button](docs/setup/spotify-dashboard.png)
+
+2. Use a name such as **Spatial Audio for macOS**, add a short description, and leave Website empty. Spotify rejects app names that begin with “Spot”.
+
+   ![Spotify app name and description fields](docs/setup/create-app-details.png)
+
+3. Add this exact redirect URI, choose **Web API**, accept Spotify's terms, and save the app:
 
    ```text
    http://127.0.0.1:8888/callback
@@ -32,15 +41,24 @@ Automatic local-playback monitoring is intentionally not part of this foundation
 
    This is an HTTP loopback exception: it only accepts requests on your Mac. The app uses this exact URI at runtime. Do not use `localhost`.
 
-3. Create your ignored local configuration and add the app's client ID:
+   ![Spotify redirect URI and Web API fields](docs/setup/redirect-uri-and-web-api.png)
 
-   ```sh
-   cp Config/Spotify.local.xcconfig.example Config/Spotify.local.xcconfig
-   ```
+4. On the app's **Basic Information** page, copy the public **Client ID**. Do not reveal or copy the client secret.
+5. Return to Spotify Spatial Audio, paste the Client ID into the guide, and choose **Connect Spotify**.
 
-   ```xcconfig
-   SPOTIFY_CLIENT_ID = your_client_id
-   ```
+The Client ID is stored only in macOS user preferences. Authorization uses PKCE, and access/refresh tokens are stored in macOS Keychain.
+
+### Maintainer configuration
+
+For local development, you can optionally provide a fallback Client ID at build time. Create the ignored local configuration:
+
+```sh
+cp Config/Spotify.local.xcconfig.example Config/Spotify.local.xcconfig
+```
+
+```xcconfig
+SPOTIFY_CLIENT_ID = your_client_id
+```
 
 The client ID is a public application identifier. Never add a Spotify client secret to this native app.
 
@@ -58,6 +76,8 @@ The requested scopes are limited to:
 Playback transfer requires Spotify Premium.
 
 ## Build
+
+Building requires Xcode 26 or newer so Swift can compile the Liquid Glass APIs. The built app still runs on macOS 14 and newer, using native material fallbacks before macOS 26.
 
 Open `SpotifySpatialAudio.xcodeproj` in Xcode, select your development team if signing is requested, and run the `SpotifySpatialAudio` scheme.
 
