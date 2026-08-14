@@ -95,3 +95,9 @@ No Accessibility permission or global keyboard event is required.
 ## License
 
 Apache License 2.0. See `LICENSE` and `NOTICE`.
+
+## Stars
+
+If Spotify Spatial Audio is useful to you, consider starring the repository.
+
+[![GitHub stars](https://img.shields.io/github/stars/walledagoat/SpotifySpatialAudio?style=for-the-badge&logo=github&label=Stars)](https://github.com/walledagoat/SpotifySpatialAudio/stargazers)
