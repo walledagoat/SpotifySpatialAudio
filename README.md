@@ -31,7 +31,11 @@ Automatic local-playback monitoring is intentionally not part of this foundation
 
    This is an HTTP loopback exception: it only accepts requests on your Mac. The app uses this exact URI at runtime. Do not use `localhost`.
 
-3. Copy the app's client ID into `Config/Spotify.xcconfig`:
+3. Create your ignored local configuration and add the app's client ID:
+
+   ```sh
+   cp Config/Spotify.local.xcconfig.example Config/Spotify.local.xcconfig
+   ```
 
    ```xcconfig
    SPOTIFY_CLIENT_ID = your_client_id

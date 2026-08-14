@@ -1,0 +1,2 @@
+// Copy this file to Spotify.local.xcconfig and replace the placeholder.
+SPOTIFY_CLIENT_ID = your_client_id

@@ -1,3 +1,4 @@
 // Spotify client IDs are public identifiers. Create an app at
 // https://developer.spotify.com/dashboard and paste its client ID below.
 SPOTIFY_CLIENT_ID =
+#include? "Spotify.local.xcconfig"

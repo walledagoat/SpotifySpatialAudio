@@ -4,3 +4,4 @@ DerivedData/
 build/
 *.xcuserstate
 xcuserdata/
+Config/Spotify.local.xcconfig
