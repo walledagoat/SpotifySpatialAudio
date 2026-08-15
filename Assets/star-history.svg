@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title description">
 <title id="title">SpotifySpatialAudio GitHub star history</title>
-<desc id="description">A timeline showing 0 GitHub stars for walledagoat/SpotifySpatialAudio.</desc>
+<desc id="description">A timeline showing 1 GitHub stars for walledagoat/SpotifySpatialAudio.</desc>
 <rect width="800" height="500" rx="18" fill="#fffdf8"/>
 <text x="400" y="42" text-anchor="middle" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="30" font-weight="700" fill="#16181d">Star History</text>
 <text x="400" y="69" text-anchor="middle" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="15" fill="#626873">walledagoat/SpotifySpatialAudio</text>
@@ -20,8 +20,9 @@
 <path d="M 81.9 92.1 L 82.8 427.9" fill="none" stroke="#20242c" stroke-width="2.2" stroke-linecap="round"/>
 <text x="82.0" y="461" text-anchor="start" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#6b7280">Aug 14, 2026</text>
 <text x="758.0" y="461" text-anchor="end" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="13" fill="#6b7280">Aug 15, 2026</text>
-<path d="M 80.3 428.7 L 756.7 427.9" fill="none" stroke="#8fb3ff" stroke-width="5" opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 82.3 426.9 L 757.5 427.3" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="400" y="250" text-anchor="middle" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="22" fill="#626873">Waiting for the first star...</text>
+<path d="M 80.3 428.7 L 80.7 360.7 L 758.6 361.9" fill="none" stroke="#8fb3ff" stroke-width="5" opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 82.3 426.9 L 81.5 360.1 L 758.6 361.2" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="758.0" cy="360.8" r="7" fill="#fffdf8" stroke="#2563eb" stroke-width="3"/>
+<text x="750.0" y="342.8" text-anchor="end" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="18" font-weight="700" fill="#16181d">1 star</text>
 <text x="758" y="475" text-anchor="end" font-family="'Comic Sans MS','Bradley Hand','Chalkboard SE',cursive" font-size="12" fill="#9aa0aa">Updated automatically by GitHub Actions</text>
 </svg>
