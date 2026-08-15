@@ -17,7 +17,8 @@ let package = Package(
     .executableTarget(
       name: "SpotifySpatialAudio",
       path: "SpotifySpatialAudio",
-      exclude: ["Resources/Info.plist", "Resources/SpotifySpatialAudio.entitlements"]
+      exclude: ["Resources/Info.plist", "Resources/SpotifySpatialAudio.entitlements"],
+      resources: [.process("Resources/SetupGuide")]
     ),
     .testTarget(
       name: "SpotifySpatialAudioTests",
