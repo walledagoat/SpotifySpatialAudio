@@ -4,49 +4,31 @@ import SwiftUI
 @main
 @MainActor
 struct SpotifySpatialAudioApp: App {
-  @StateObject private var appState: AppState
+  @NSApplicationDelegateAdaptor(SpotifySpatialAudioAppDelegate.self)
+  private var appDelegate
+  @StateObject private var controller: AppController
 
   init() {
-    do {
-      let configuration = try SpotifyConfiguration.from()
-      let authManager = try SpotifyAuthManager(
-        configuration: configuration,
-        tokenStore: KeychainTokenStore()
-      )
-      let spotifyAPI = try SpotifyAPIClient(tokenProvider: authManager)
-      let safariController = try SafariController()
-      let discovery = SafariDeviceDiscovery(spotifyAPI: spotifyAPI)
-      let coordinator = SpatialAudioCoordinator(
-        spotifyAPI: spotifyAPI,
-        safariController: safariController,
-        deviceDiscovery: discovery
-      )
-      let state = AppState(
-        authManager: authManager,
-        coordinator: coordinator,
-        safariController: safariController
-      )
-      _appState = StateObject(wrappedValue: state)
-      Task { await state.refreshAuthenticationStatus() }
-    } catch {
-      _appState = StateObject(
-        wrappedValue: AppState(
-          authManager: nil,
-          configurationError: error.localizedDescription
-        )
-      )
-    }
+    _controller = StateObject(wrappedValue: AppController())
   }
 
   var body: some Scene {
     Window("Spotify Spatial Audio", id: "main") {
-      MainWindowView(appState: appState)
+      MainWindowView(
+        appState: controller.appState,
+        onShowSetup: controller.showSetup
+      )
+      .sheet(isPresented: $controller.isShowingSetup) {
+        SetupGuideView(controller: controller)
+      }
+      .task {
+        await controller.presentSetupOnLaunchIfNeeded()
+      }
     }
     .defaultSize(width: 760, height: 560)
-    .windowResizability(.contentSize)
 
     MenuBarExtra("Spotify Spatial Audio", systemImage: "airpodspro") {
-      MenuBarContentView(appState: appState)
+      MenuBarContentView(controller: controller)
     }
     .menuBarExtraStyle(.menu)
     .commandsRemoved()
@@ -54,13 +36,19 @@ struct SpotifySpatialAudioApp: App {
 }
 
 private struct MenuBarContentView: View {
-  @ObservedObject var appState: AppState
+  @ObservedObject var controller: AppController
   @Environment(\.openWindow) private var openWindow
+
+  private var appState: AppState {
+    controller.appState
+  }
 
   var body: some View {
     Button("Open Spotify Spatial Audio") {
-      NSApplication.shared.activate(ignoringOtherApps: true)
       openWindow(id: "main")
+      DispatchQueue.main.async {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+      }
     }
     .keyboardShortcut("o")
 
@@ -89,6 +77,16 @@ private struct MenuBarContentView: View {
         Task { await appState.authenticate() }
       }
       .disabled(!appState.canAuthenticate)
+    }
+
+    Divider()
+
+    Button("Setup Guide…") {
+      openWindow(id: "main")
+      controller.showSetup()
+      DispatchQueue.main.async {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+      }
     }
 
     Divider()

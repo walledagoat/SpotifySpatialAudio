@@ -1,18 +1,21 @@
-import XCTest
+import Foundation
+import Testing
 
 @testable import SpotifySpatialAudio
 
-final class AppLinksTests: XCTestCase {
-  func testBuyMeACoffeeURLUsesPublicProfilePath() {
-    XCTAssertEqual(
-      AppLinks.buyMeACoffeeURL(username: "wallemadeit"),
-      URL(string: "https://buymeacoffee.com/wallemadeit")
+struct AppLinksTests {
+  @Test("Buy Me a Coffee uses a public profile path")
+  func buyMeACoffeeURLUsesPublicProfilePath() {
+    #expect(
+      AppLinks.buyMeACoffeeURL(username: "wallemadeit")
+        == URL(string: "https://buymeacoffee.com/wallemadeit")
     )
   }
 
-  func testBuyMeACoffeeURLRejectsPlaceholderAndInvalidValues() {
-    XCTAssertNil(AppLinks.buyMeACoffeeURL(username: ""))
-    XCTAssertNil(AppLinks.buyMeACoffeeURL(username: "your_username"))
-    XCTAssertNil(AppLinks.buyMeACoffeeURL(username: "not/a/username"))
+  @Test("Buy Me a Coffee rejects placeholders and invalid values")
+  func buyMeACoffeeURLRejectsPlaceholderAndInvalidValues() {
+    #expect(AppLinks.buyMeACoffeeURL(username: "") == nil)
+    #expect(AppLinks.buyMeACoffeeURL(username: "your_username") == nil)
+    #expect(AppLinks.buyMeACoffeeURL(username: "not/a/username") == nil)
   }
 }
